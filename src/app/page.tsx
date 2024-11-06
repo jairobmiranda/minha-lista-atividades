@@ -1,3 +1,9 @@
+"use client";
+
+import { Helloworld } from "@/lib/helpers/helpers";
+
+const texto = Helloworld();
+
 export default function Home() {
-  return <div>rei low word!</div>;
+  return <div>{texto}</div>;
 }

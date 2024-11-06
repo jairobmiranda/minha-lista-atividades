@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ContextoTarefasProvider } from "./contexto-tarefas";
 
 export const metadata: Metadata = {
   title: "Minhas tarefas",
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-        {children}
+        <ContextoTarefasProvider>{children}</ContextoTarefasProvider>
       </body>
     </html>
   );
