@@ -1,10 +1,10 @@
 'use client';
 
-import { Tarefa } from "@/lib/types/interfaces";
+import { TypeTarefa } from "@/lib/types/interfaces";
 import { createContext, ReactNode, useContext, useState } from "react";
 
 interface ContextoTarefasProps {
-  tarefas: Tarefa[];
+  tarefas: TypeTarefa[];
   adicionarTarefa: (texto: string) => void;
   alternarStatusTarefa: (id: number) => void;
 }
@@ -16,7 +16,7 @@ const ContextoTarefas = createContext<ContextoTarefasProps | undefined>(
 
 // Criando o provider para o contexto
 export function ContextoTarefasProvider({ children }: { children: ReactNode }) {
-  const [tarefas, setTarefas] = useState<Tarefa[]>([]);
+  const [tarefas, setTarefas] = useState<TypeTarefa[]>([]);
 
   const adicionarTarefa = (texto: string) => {
     setTarefas((tarefasAntigas) => [
